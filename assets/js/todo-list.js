@@ -16,6 +16,8 @@ function TodoController() {
     this.todoInput = document.getElementById('newTodo');
     this.todoListView = document.getElementById('todoListView');
 };
+
+
 TodoController.prototype = {
     /**
      * @param {argument} key-localstorage로 이동
@@ -73,9 +75,9 @@ TodoController.prototype = {
     setAttributes: function (element, attrs) {
         //key 값이 대체 뭐지 ???
         for (var key in attrs) {
-            console.log(element)
+            // console.log(element)
             element.setAttribute(key, attrs[key]);
-            console.log(element)
+            // console.log(element)
         }
     },
     /**
@@ -85,22 +87,31 @@ TodoController.prototype = {
     checkboxView: function (todoId) {
         var inpCheckbox = document.createElement('input');
 
+        var list = todoController.getTodoFromLocalstorage('todoList');
+        //아이디가 같고 요걸 왜 못찾지???
+        for (var i = 0; i < list.length; i++) {
+            console.log(list[i].id);
+        }
 
-        //이놈은 그냥 체크박스만 만들어주는거고
-        this.setAttributes(inpCheckbox, {type: 'checkbox', class: 'itemList', id: todoId});
-        //입력 체크 박스 클릭 이벤트 확인
+        console.log(todoId);
+        this.setAttributes(inpCheckbox, {type: 'checkbox', class: 'itemList', id: todoId,});
+
 
         inpCheckbox.addEventListener('click', function (e) {
 
             //localStorage에서 목록 배열 가져 오기
             var list = todoController.getTodoFromLocalstorage('todoList');
-            //
 
             var id = e.target.getAttribute('id');
             for (var i = 0; i < list.length; i++) {
                 if (list[i].id == id) {
-                    console.log("체크 했을때 ")
                     list[i].isDone = e.target.checked;
+
+                    //요건 그냥 isDone속성을 true로 바꿔줌.
+                    //css after와 큰 상관 없는듯듯
+                    console.log("체크 했을때 ")
+                    console.log((list[i].isDone))
+                    console.log(e.target.checked)
                 }
             }
             //localStorage에 할 목록 저장
@@ -289,7 +300,6 @@ TodoController.prototype = {
         var list = document.getElementsByClassName('itemList');
         var checkAll = document.getElementById('toggleInputAll');
         checkAll.addEventListener('change', function (e) {
-            //모든 change 감지로 e.target.checked 로 변경
             var check;
             for (var i = 0; i < list.length; i++) {
                 list[i].checked = this.checked;
@@ -398,11 +408,11 @@ TodoController.prototype = {
 
             var element = todoController.todoView(list[i]);
             console.log("element 값 확인 : " + element);
-            // console.log("list값 확인 : " + list[i]);
 
 
             if (list[i].isDone) {
                 element.classList.add('checked');
+                $(`#${todoId}`).prop('checked', true);
 
 
             }
