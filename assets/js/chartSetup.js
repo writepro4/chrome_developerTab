@@ -24,7 +24,7 @@ $(document).ready(function () {
             } else if (jqXHR.status === 400) {
                 alert('Server understood the request, but request content was invalid. [400]');
             } else if (jqXHR.status === 401) {
-                $.toast('<h4>목표 설정 기능을 원하신다면 WakaTime에 로그인해주세요!</h4>', {type: 'danger', duration: 1500});
+                $.toast('<h4>If you want the goal setting function, please log in to WakaTime!</h4>', {type: 'danger', duration: 1500});
 
 
             } else if (jqXHR.status === 403) {
