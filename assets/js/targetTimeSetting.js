@@ -6,6 +6,7 @@ document.getElementById("240").addEventListener("click", targetTimeSetting);
 document.getElementById("300").addEventListener("click", targetTimeSetting);
 document.getElementById("360").addEventListener("click", targetTimeSetting);
 document.getElementById("420").addEventListener("click", targetTimeSetting);
+document.getElementById("goalSettingButton").addEventListener("click", hideGoalSettingButton);
 
 //목표 시간 설정을 누르면 ajax로 wakatime 시간 progress바에 업데이트
 function targetTimeSetting(value) {
@@ -164,4 +165,34 @@ function targetTimeSetting(value) {
 
         }
     });
+
+
+
+}
+
+function hideGoalSettingButton() {
+    console.log("목표설정버튼  삭제 ")
+    let check = localStorage.getItem("goalSettingButton");
+    console.log("차트 값 확인 : " + check);
+
+    if (check === null) {
+        console.log("널");
+        //사용자가 버튼을 처음 눌렀을때
+        localStorage.setItem("goalSettingButton", true);
+        $('#goalSetting').remove();
+    } else if (check === 'true') {
+        console.log("트루");
+        localStorage.setItem("goalSettingButton", false);
+        //사용자가 다시 차트를 열려 할때
+        location.reload();
+    } else if (check === 'false') {
+        console.log("펄스");
+        //사용자가 다시 차트를 닫을때
+        localStorage.setItem("goalSettingButton", true);
+        $('#goalSetting').remove();
+    } else {
+        console.log("띠용");
+    }
+    console.log("??")
+
 }

@@ -42,14 +42,21 @@
     <div class="ui pointing below label" style="margin-bottom: -5px;">
         Developer's excuse 👻
     </div>
-    <button class="circular ui icon button" id="toggleButton" style="float: right; color: black">
-        <i class="icon settings"></i>
+    <button data-inverted="" data-tooltip="do not use wakatime! "
+            data-position="bottom center" class="circular ui icon button" id="toggleButton" style="float: right; color: black">
+        <i class="icon chart line"></i>
     </button>
-    <button class="circular ui icon button" id="github" style="float: right; color: black">
+    <button data-inverted="" data-tooltip="sourceView! "
+            data-position="bottom center" class="circular ui icon button" id="github" style="float: right; color: black">
         <i class="icon github"></i>
     </button>
-    <button class="circular ui icon button" id="backgroundSetting" style="float: right; color: black">
+    <button data-inverted="" data-tooltip="change Wallpaper! "
+            data-position="bottom center" class="circular ui icon button" id="backgroundSetting" style="float: right; color: black">
         <i class="icon picture"></i>
+    </button>
+    <button data-inverted="" data-tooltip="Hide goal setting button! "
+            data-position="bottom center" class="circular ui icon button" id="goalSettingButton" style="float: right; color: black">
+        <i class="icon target"></i>
     </button>
 
     <div class="ui floating message" style="margin-top: 20px">
@@ -86,7 +93,7 @@
             <br>
 
             <!--목표 시간 선택 버튼 section-->
-            <div class="eight ui buttons ">
+            <div class="eight ui buttons " id="goalSetting">
                 <button id="6" class="ui secondary button" data-inverted="" data-tooltip="just do it for 6 minutes! "
                         data-position="top center">🥺 Start
                 </button>

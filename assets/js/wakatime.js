@@ -274,6 +274,18 @@ $(document).ready(function () {
 
     }
 
+    let check2 = localStorage.getItem("goalSettingButton");
+    console.log('값 확인 :' + check2);
+    if (check2 === null) {
+        console.log("널 값 ")
+    } else if (check2 === 'true') {
+        console.log("실행")
+        $('#goalSetting').remove();
+    } else if (check2 === 'false') {
+        console.log("펄스 값")
+
+    }
+
 
 
 
