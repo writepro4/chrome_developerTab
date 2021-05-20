@@ -1,3 +1,4 @@
+document.getElementById("6").addEventListener("click", targetTimeSetting);
 document.getElementById("60").addEventListener("click", targetTimeSetting);
 document.getElementById("120").addEventListener("click", targetTimeSetting);
 document.getElementById("180").addEventListener("click", targetTimeSetting);
@@ -49,6 +50,11 @@ function targetTimeSetting(value) {
 
             //최대 10시간
             switch (hour) {
+
+                case 0 :
+
+                    wakahourtime = 6;
+                    break;
 
                 case 1 :
 

@@ -35,7 +35,7 @@ body {
 
 /*백그라운드 이미지 지정*/
 body {
-    background: url(/assets/images/space2.png) no-repeat center center fixed;
+    background: url(/assets/images/mountine.jpg) no-repeat center center fixed;
     /*background-image: url("/assets/images/space2.png");*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -74,7 +74,7 @@ body {
     position: relative;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 25px 50px 0 rgba(0, 0, 0, 0.1);
-    width: 90%;
+    width: 100%;
     margin: 20px auto;
 }
 

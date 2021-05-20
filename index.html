@@ -14,15 +14,29 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!--    토스트 메시지 css-->
     <link rel="stylesheet" href="assets/css/jquery.toast.min.css">
-<!--    플립 카드 css-->
-    <link rel="stylesheet" href="assets/js/clock_assets/flipclock.css">
+    <!--    rain css-->
+    <link rel="stylesheet" href="assets/css/rain.css">
+
+
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
 
 
 </head>
 
-<body>
+<body class="back-row-toggle splat-toggle">
 
-<section style="width: 90%; margin:  5px auto;">
+<div class="rain front-row"></div>
+<div class="rain back-row"></div>
+<!--<div class="toggles">-->
+<!--    <div class="splat-toggle toggle active">SPLAT</div>-->
+<!--    <div class="back-row-toggle toggle active">BACK<br>ROW</div>-->
+<!--    <div class="single-toggle toggle">SINGLE</div>-->
+<!--</div>-->
+
+<section style="width: 100%; margin: 5px auto;">
 
     <!--개발자의 변명 section-->
     <div class="ui pointing below label" style="margin-bottom: -5px;">
@@ -42,8 +56,6 @@
     </div>
 
     <!-- ////개발자의 변명 section-->
-
-
 
 
     <div id="toggleChart">
@@ -71,7 +83,10 @@
             <br>
 
             <!--목표 시간 선택 버튼 section-->
-            <div class="seven ui buttons " >
+            <div class="eight ui buttons ">
+                <button id="6" class="ui secondary button" data-inverted="" data-tooltip="just do it for 6 minutes! "
+                        data-position="top center">🥺 Start
+                </button>
                 <button id="60" class="ui secondary button" data-inverted="" data-tooltip="Starting very small!"
                         data-position="top center">👻 1hour
                 </button>
@@ -103,20 +118,17 @@
     </div>
 
 
-<!--    <div class="ui center aligned container">-->
-<!--        <div class="microscopic-font" style="color: wheat; margin-top: 10px;">Let's use today for tomorrow.</div>-->
-<!--    </div>-->
+    <!--    <div class="ui center aligned container">-->
+    <!--        <div class="microscopic-font" style="color: wheat; margin-top: 10px;">Let's use today for tomorrow.</div>-->
+    <!--    </div>-->
 
 
-<!--    <div class="ui center aligned container microscopic-font2" id="wakaTimeRanking"-->
-<!--         style="color: wheat; margin: 0 auto;"></div>-->
+    <!--    <div class="ui center aligned container microscopic-font2" id="wakaTimeRanking"-->
+    <!--         style="color: wheat; margin: 0 auto;"></div>-->
 
     <!-- ////// 목표 시간 선택 버튼 section-->
 
 </section>
-
-
-
 
 
 <!--할일 목록 section-->
@@ -142,10 +154,12 @@
                 <a href="#completed" id="completedTodos" onclick="changeClass(this)">Completed</a>
             </li>
         </ul>
-        <button class="clear-completed" id="btnClear">Clear</button>
+        <button class="clear-completed" id="btnClear">Clea</button>
     </footer>
 </section>
 <!-- ////할일 목록 section-->
+
+<div id="example1"></div>
 
 <!--<div class="clock-builder-output" style="zoom: 0.7; -moz-transform: scale(0.7); "></div>-->
 
@@ -163,15 +177,23 @@
 <script src="/assets/js/targetTimeSetting.js"></script>
 <!--토스트 메시지 js-->
 <script src="/assets/js/jquery.toast.min.js"></script>
-<!--플립 카드 제이쿼리 js-->
-<script src="/assets/js/clock_assets/jquery.countdown.min.js"></script>
-<!--플립 카드 js-->
-<script src="/assets/js/clock_assets/flipclock.js"></script>
+<!--rain js -->
+<script src="/assets/js/rain.js"></script>
+
+<!--&lt;!&ndash;플립 카드 제이쿼리 js&ndash;&gt;-->
+<!--<script src="/assets/js/clock_assets/jquery.countdown.min.js"></script>-->
+<!--&lt;!&ndash;플립 카드 js&ndash;&gt;-->
+<!--<script src="/assets/js/clock_assets/flipclock.js"></script>-->
 
 <!--todolist js -->
 <script src="assets/js/todo-list.js"></script>
 <script src="/assets/js/flipCard.js"></script>
 
+
+<!--raindrops 효과 -->
+<script src="assets/js/raindrops.js"></script>
+<!--raindrops 설정 파일-->
+<script src="assets/js/raindropsSetting.js"></script>
 </body>
 
 </html>
