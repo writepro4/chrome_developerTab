@@ -36,7 +36,6 @@ body {
 /*백그라운드 이미지 지정*/
 body {
     background: url(/assets/images/mountine.jpg) no-repeat center center fixed;
-    /*background-image: url("/assets/images/space2.png");*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

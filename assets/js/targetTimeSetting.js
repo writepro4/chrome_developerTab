@@ -1,4 +1,3 @@
-document.getElementById("6").addEventListener("click", targetTimeSetting);
 document.getElementById("60").addEventListener("click", targetTimeSetting);
 document.getElementById("120").addEventListener("click", targetTimeSetting);
 document.getElementById("180").addEventListener("click", targetTimeSetting);
@@ -6,10 +5,12 @@ document.getElementById("240").addEventListener("click", targetTimeSetting);
 document.getElementById("300").addEventListener("click", targetTimeSetting);
 document.getElementById("360").addEventListener("click", targetTimeSetting);
 document.getElementById("420").addEventListener("click", targetTimeSetting);
+document.getElementById("480").addEventListener("click", targetTimeSetting);
 document.getElementById("goalSettingButton").addEventListener("click", hideGoalSettingButton);
 
 //목표 시간 설정을 누르면 ajax로 wakatime 시간 progress바에 업데이트
 function targetTimeSetting(value) {
+    console.log("아예 실행안됨");
     //목표 시간 가져와서 로컬에 저장
     const targetTime = parseInt(value.target.id);
 
@@ -102,7 +103,7 @@ function targetTimeSetting(value) {
 
 
             //목표 시간
-            let targetTime = 0;
+            let targetTime;
 
             //저장된 목표 시간 가져오기
             if (localStorage.getItem("targetTime") == null) {

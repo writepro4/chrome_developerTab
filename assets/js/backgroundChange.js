@@ -19,6 +19,9 @@ if (localStorage.getItem('backgroundImage') != null) {
     }else if (backgroundImageNumber == 4) {
         document.body.style.backgroundImage = 'url("/assets/images/pinkLake.jpg")';
     }
+    else if (backgroundImageNumber == 5) {
+        document.body.style.backgroundImage = 'url("/assets/images/man.jpg")';
+    }
 
 
 }else{
@@ -31,7 +34,7 @@ if (localStorage.getItem('backgroundImage') != null) {
 
 function backgroundSetting() {
     backgroundImageNumber += 1;
-    if (backgroundImageNumber >= 5) {
+    if (backgroundImageNumber >= 6) {
         console.log("넘버 초기화 ")
         backgroundImageNumber = 0;
     }
@@ -48,6 +51,8 @@ function backgroundSetting() {
         document.body.style.backgroundImage = 'url("/assets/images/woodRoad.jpg")';
     }else if (backgroundImageNumber == 4) {
         document.body.style.backgroundImage = 'url("/assets/images/pinkLake.jpg")';
+    }else if (backgroundImageNumber == 5) {
+        document.body.style.backgroundImage = 'url("/assets/images/man.jpg")';
     }
 }
 
