@@ -300,6 +300,7 @@ TodoController.prototype = {
         var list = document.getElementsByClassName('itemList');
         var checkAll = document.getElementById('toggleInputAll');
         checkAll.addEventListener('change', function (e) {
+
             var check;
             for (var i = 0; i < list.length; i++) {
                 list[i].checked = this.checked;
@@ -313,6 +314,8 @@ TodoController.prototype = {
         var listWork = document.getElementsByClassName('todoItem');
         var showAllItem = document.getElementById('allWorks');
         showAllItem.addEventListener('click', function () {
+            console.log("all 버튼 누릅니다.")
+            localStorage.setItem('todoButtonCheck', "All");
             for (var i = 0; i < listWork.length; i++) {
                 listWork[i].style.display = 'block';
             }
@@ -321,6 +324,7 @@ TodoController.prototype = {
         var activeItem = document.getElementsByClassName('todoItem');
         var todoActive = document.getElementById('activedItems');
         todoActive.addEventListener('click', function () {
+            localStorage.setItem('todoButtonCheck', "Active");
 
             var list = todoController.getTodoFromLocalstorage('todoList');
 
@@ -342,6 +346,7 @@ TodoController.prototype = {
         var todoCompleted = document.getElementById('completedTodos');
         todoCompleted.addEventListener('click', function () {
             console.log("완료된 목록 출력하기 ");
+            localStorage.setItem('todoButtonCheck', "Completed");
 
             //isDone 목록 true인것만 출력하면 됨
             var todoList = todoController.getTodoFromLocalstorage('todoList');
@@ -401,22 +406,100 @@ TodoController.prototype = {
         console.log("화면 시작");
 //localStorage에서 가져 오기
         var list = todoController.getTodoFromLocalstorage('todoList');
+        //여서 local 값 확인후 출력해주믄 됨.
         todoController.removeElement();
-        for (var i = 0; i < list.length; i++) {
-            var todoId = list[i].id;
+        var activeItem = document.getElementsByClassName('todoItem');
+        // var todoList = todoController.getTodoFromLocalstorage('todoList');
+        // var completeItem = document.getElementsByClassName('todoItem');
+
+        let checkbutton = localStorage.getItem('todoButtonCheck');
+
+        if (checkbutton == 'All') {
+            for (var i = 0; i < list.length; i++) {
+                var todoId = list[i].id;
 
 
-            var element = todoController.todoView(list[i]);
-            console.log("element 값 확인 : " + element);
+                var element = todoController.todoView(list[i]);
+                console.log("element 값 확인 : " + element);
 
 
-            if (list[i].isDone) {
-                element.classList.add('checked');
-                $(`#${todoId}`).prop('checked', true);
+                if (list[i].isDone) {
+                    element.classList.add('checked');
+                    $(`#${todoId}`).prop('checked', true);
 
 
+                }
+            }
+        } else if (checkbutton == 'Active') {
+
+            for (var i = 0; i < list.length; i++) {
+                // console.log(todotodo[i]);
+                // console.log("엑티브 아이템 " + activeItem[i]);
+
+                // if (todoList[i].isDone === false) {
+                //     activeItem[i].style.display = 'block';
+                // } else {
+                //     activeItem[i].style.display = 'none';
+                // }
+
+                for (var i = 0; i < list.length; i++) {
+                    var todoId = list[i].id;
+
+
+                    var element = todoController.todoView(list[i]);
+                    console.log("element 값 확인 : " + element);
+
+
+                    if (list[i].isDone) {
+                        element.classList.add('checked');
+                        $(`#${todoId}`).prop('checked', true);
+                        activeItem[i].style.display = 'none';
+
+
+                    }
+                }
+            }
+
+        } else if (checkbutton == 'Completed') {
+
+
+            for (var i = 0; i < list.length; i++) {
+                var todoId = list[i].id;
+
+
+                var element = todoController.todoView(list[i]);
+                console.log("element 값 확인 : " + element);
+
+
+                if (list[i].isDone === true) {
+                    element.classList.add('checked');
+                    $(`#${todoId}`).prop('checked', true);
+                    activeItem[i].style.display = 'block';
+
+                } else {
+                    // element.classList.add('checked');
+                    // $(`#${todoId}`).prop('checked', true);
+                    activeItem[i].style.display = 'none';
+                }
+            }
+        } else {
+            for (var i = 0; i < list.length; i++) {
+                var todoId = list[i].id;
+
+
+                var element = todoController.todoView(list[i]);
+                console.log("element 값 확인 : " + element);
+
+
+                if (list[i].isDone) {
+                    element.classList.add('checked');
+                    $(`#${todoId}`).prop('checked', true);
+
+
+                }
             }
         }
+
     },
     removeElement: function () {
         var todoListView = document.getElementById('todoListView');
