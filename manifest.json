@@ -5,16 +5,17 @@
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "permissions": [
     "https://wakatime.com/api/v1/",
-    "activeTab"
+    "activeTab",
+    "topSites"
   ],
   "description": "for developers Wakatime Tab",
   "browser_action": {
-    "default_title": "WakaTimeTab"
+    "default_title": "WakaTimeTab",
+    "default_popup": "popup.html"
   },
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "csp": "script-src 'self' 'unsafe-inline'; object-src 'self'",
   "content_scripts": [
     {
       "matches": [

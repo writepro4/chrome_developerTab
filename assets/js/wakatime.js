@@ -286,6 +286,18 @@ $(document).ready(function () {
 
     }
 
+    let datepickerCheck = localStorage.getItem('dateCheck');
+    console.log('값 확인 :' + datepickerCheck);
+    if (datepickerCheck === null) {
+        console.log("널 값 ")
+    } else if (datepickerCheck === 'true') {
+        console.log("실행")
+        $('#dateDiv').remove();
+    } else if (datepickerCheck === 'false') {
+        console.log("펄스 값")
+
+    }
+
 
 
 
@@ -295,6 +307,7 @@ $(document).ready(function () {
 
 document.getElementById("toggleButton").addEventListener("click", deleteChart);
 document.getElementById("github").addEventListener("click", githubOpen);
+document.getElementById("date").addEventListener("click", dateCheck);
 
 function githubOpen() {
     location.href = 'https://github.com/writepro4/chrome_developer_tab';
@@ -325,6 +338,33 @@ function deleteChart() {
         console.log("띠용");
     }
     console.log("??")
+
+
+}
+
+function dateCheck() {
+    let check = localStorage.getItem("dateCheck");
+
+    if (check === null) {
+        console.log("널");
+        //사용자가 버튼을 처음 눌렀을때
+        localStorage.setItem("dateCheck", true);
+        $('#dateDiv').remove();
+    } else if (check === 'true') {
+        console.log("트루");
+        localStorage.setItem("dateCheck", false);
+        //사용자가 다시 차트를 열려 할때
+        location.reload();
+    } else if (check === 'false') {
+        console.log("펄스");
+        //사용자가 다시 차트를 닫을때
+        localStorage.setItem("dateCheck", true);
+        $('#dateDiv').remove();
+    } else {
+        console.log("띠용");
+    }
+    console.log("??")
+
 
 
 }

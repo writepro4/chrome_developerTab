@@ -20,7 +20,10 @@ if (localStorage.getItem('backgroundImage') != null) {
         document.body.style.backgroundImage = 'url("/assets/images/pinkLake.jpg")';
     }
     else if (backgroundImageNumber == 5) {
-        document.body.style.backgroundImage = 'url("/assets/images/man.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/lake2.jpg")';
+    }
+    else if (backgroundImageNumber == 6) {
+        document.body.style.backgroundImage = 'url("/assets/images/aurora.jpg")';
     }
 
 
@@ -34,10 +37,11 @@ if (localStorage.getItem('backgroundImage') != null) {
 
 function backgroundSetting() {
     backgroundImageNumber += 1;
-    if (backgroundImageNumber >= 6) {
+    if (backgroundImageNumber >= 7) {
         console.log("넘버 초기화 ")
         backgroundImageNumber = 0;
     }
+
 
     localStorage.setItem('backgroundImage', backgroundImageNumber);
 
@@ -52,7 +56,10 @@ function backgroundSetting() {
     }else if (backgroundImageNumber == 4) {
         document.body.style.backgroundImage = 'url("/assets/images/pinkLake.jpg")';
     }else if (backgroundImageNumber == 5) {
-        document.body.style.backgroundImage = 'url("/assets/images/man.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/lake2.jpg")';
+    }
+    else if (backgroundImageNumber == 6) {
+        document.body.style.backgroundImage = 'url("/assets/images/aurora.jpg")';
     }
 }
 

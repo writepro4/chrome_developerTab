@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/jquery.toast.min.css">
     <!--    rain css-->
     <link rel="stylesheet" href="assets/css/rain.css">
+    <!--    제이쿼리 ui css-->
+    <link rel="stylesheet" href="assets/css/jquery-ui.css">
 
 
 </head>
@@ -34,30 +36,39 @@
 
     <!--개발자의 변명 section-->
     <div class="ui pointing below label" style="margin-bottom: -5px;">
-        Developer's excuse 👻
+        Tab for developers 👻
     </div>
     <button data-inverted="" data-tooltip="do not use wakatime! "
-            data-position="bottom center" class="circular ui icon button" id="toggleButton" style="float: right; color: black">
+            data-position="bottom center" class="circular ui icon button" id="toggleButton"
+            style="float: right; color: black">
         <i class="icon chart line"></i>
     </button>
     <button data-inverted="" data-tooltip="sourceView! "
-            data-position="bottom center" class="circular ui icon button" id="github" style="float: right; color: black">
+            data-position="bottom center" class="circular ui icon button" id="github"
+            style="float: right; color: black">
         <i class="icon github"></i>
     </button>
     <button data-inverted="" data-tooltip="change Wallpaper! "
-            data-position="bottom center" class="circular ui icon button" id="backgroundSetting" style="float: right; color: black">
+            data-position="bottom center" class="circular ui icon button" id="backgroundSetting"
+            style="float: right; color: black">
         <i class="icon picture"></i>
     </button>
     <button data-inverted="" data-tooltip="Hide goal setting button! "
-            data-position="bottom center" class="circular ui icon button" id="goalSettingButton" style="float: right; color: black">
+            data-position="bottom center" class="circular ui icon button" id="goalSettingButton"
+            style="float: right; color: black">
         <i class="icon target"></i>
     </button>
+    <button data-inverted="" data-tooltip="D-day count setting! "
+            data-position="bottom center" class="circular ui icon button" id="date" style="float: right; color: black">
+        <i class="icon hourglass start"></i>
+    </button>
+    <!--    <p>Date: <input type="text" id="datepicker"></p>-->
 
-    <div class="ui floating message" style="margin-top: 20px">
+    <!--    <div class="ui floating message" style="margin-top: 20px">-->
 
-        <span class="microscopic-font" id="developerExcuse"></span>
+    <!--        <span class="microscopic-font" id="developerExcuse"></span>-->
 
-    </div>
+    <!--    </div>-->
 
     <!-- ////개발자의 변명 section-->
 
@@ -67,27 +78,35 @@
             <!--    Chart.js section-->
             <canvas id="myChart" height="78"></canvas>
 
-            <!--    Chart.js section-->
-
 
             <!--WakaTime 프로그레스바 section-->
+
             <div class="ui container">
-                <div id="wakaProgress" class="ui indicating progress">
-                    <div class="bar">
-                        <div class="progress"></div>
-                    </div>
-                    <div class="label targetTime microscopic-font"
-                         style="color: wheat; margin-top: 10px; font-size: 20px;">
-                        What is today's coding time?
-                    </div>
+
+                <div class="label targetTime microscopic-font"
+                     style="color: wheat; margin: 10px; font-size: 20px; text-align: center;">
+                    What is today's coding time?
                 </div>
+
+                <div id="wakaProgress" class="ui indicating progress" style="margin: unset">
+
+
+                    <div class="bar">
+
+                        <div class="progress"></div>
+
+                    </div>
+
+                </div>
+
+
             </div>
 
             <!-- ////WakaTime 프로그레스바 section-->
-            <br>
+
 
             <!--목표 시간 선택 버튼 section-->
-            <div class="eight wide ui buttons " id="goalSetting">
+            <div class="eight wide ui buttons " id="goalSetting" style="margin-top: 10px">
                 <button id="60" class="ui secondary button" data-inverted="" data-tooltip="Starting very small!"
                         data-position="top center">👻 1hour
                 </button>
@@ -118,11 +137,20 @@
                 </button>
             </div>
 
+
         </div>
 
     </div>
 
     <!-- ////// 목표 시간 선택 버튼 section-->
+
+    <div class="label "
+         style="color: wheat; margin: 40px; font-size: 25px; text-align: center; " id="dday">
+        D-day
+    </div>
+
+    <p style="text-align: center; " id="dateDiv"><input type="text" id="datepicker" placeholder="Click me"></p>
+
 
 </section>
 
@@ -156,17 +184,18 @@
 <!-- ////할일 목록 section-->
 
 
-
 <!--Chart.js -->
 <script src="assets/js/dist/Chart.js"></script>
 <!--제이쿼리 js-->
 <script src="/assets/js/jquery-3.1.1.min.js"></script>
+<!--제이쿼리 ui js -->
+<script src="/assets/js/jquery-ui.js"></script>
 <!--시멘틱 js-->
 <script src="/assets/Semantic/semantic.js"></script>
 <!--와카타임 js-->
 <script src="/assets/js/wakatime.js"></script>
 <!--개발자의 변명 문구 js-->
-<script src="/assets/js/randomPhrases.js"></script>
+<!--<script src="/assets/js/randomPhrases.js"></script>-->
 <!--목표 시간 설정 js-->
 <script src="/assets/js/targetTimeSetting.js"></script>
 <!--토스트 메시지 js-->
@@ -177,6 +206,8 @@
 <script src="/assets/js/backgroundChange.js"></script>
 <!--todolist js -->
 <script src="assets/js/todo-list.js"></script>
+<!--datepicker js-->
+<script src="assets/js/datepicker.js"></script>
 
 
 </body>
