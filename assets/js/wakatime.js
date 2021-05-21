@@ -213,6 +213,8 @@ $(document).ready(function () {
                 //     type: 'info',
                 //     duration: 2500
                 // });
+                $('#rain').remove();
+
                 percentAmount = 100;
             }
 

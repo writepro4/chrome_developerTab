@@ -121,9 +121,26 @@ function targetTimeSetting(value) {
 
 
             let percentAmount = wakaTimeProgressRate / targetTime * 100;
-            if (percentAmount > 100) {
+            if (percentAmount >= 100) {
                 console.log("값 변환")
                 percentAmount = 100;
+                // $('#rain').remove();
+            }else{
+
+                // if(document.getElementById("rain")){
+                //     console.log("존재");
+                // }else{
+                //     console.log("존재 안함")
+                //
+                //     let html =+ `<div id="rain">
+                //         <div class="rain front-row"></div>
+                //         <div class="rain back-row"></div>
+                //         </div>`;
+                //
+                //     $('#bodySetion').after(html);
+                //
+                // }
+
             }
             console.log("progress" + percentAmount);
 
