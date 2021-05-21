@@ -9,11 +9,11 @@ if (localStorage.getItem('backgroundImage') != null) {
     backgroundImageNumber = localStorage.getItem('backgroundImage');
 
     if (backgroundImageNumber == 0) {
-        document.body.style.backgroundImage = 'url("/assets/images/mountine.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/forest.jpg")';
     } else if (backgroundImageNumber == 1) {
         document.body.style.backgroundImage = 'url("/assets/images/cat.jpg")';
     } else if (backgroundImageNumber == 2) {
-        document.body.style.backgroundImage = 'url("/assets/images/forest.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/mountine.jpg")';
     } else if (backgroundImageNumber == 3) {
         document.body.style.backgroundImage = 'url("/assets/images/woodRoad.jpg")';
     }else if (backgroundImageNumber == 4) {
@@ -46,11 +46,11 @@ function backgroundSetting() {
     localStorage.setItem('backgroundImage', backgroundImageNumber);
 
     if (backgroundImageNumber == 0) {
-        document.body.style.backgroundImage = 'url("/assets/images/mountine.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/forest.jpg")';
     } else if (backgroundImageNumber == 1) {
         document.body.style.backgroundImage = 'url("/assets/images/cat.jpg")';
     } else if (backgroundImageNumber == 2) {
-        document.body.style.backgroundImage = 'url("/assets/images/forest.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/mountine.jpg")';
     } else if (backgroundImageNumber == 3) {
         document.body.style.backgroundImage = 'url("/assets/images/woodRoad.jpg")';
     }else if (backgroundImageNumber == 4) {

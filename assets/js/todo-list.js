@@ -315,6 +315,17 @@ TodoController.prototype = {
         var showAllItem = document.getElementById('allWorks');
         showAllItem.addEventListener('click', function () {
             console.log("all 버튼 누릅니다.")
+
+            //배열선언
+            //if문으로 처리해야됨.
+
+
+                $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+                $('#activedItems').css('border-color','');
+                $('#completedTodos').css("border-color", "");
+
+
+
             localStorage.setItem('todoButtonCheck', "All");
             for (var i = 0; i < listWork.length; i++) {
                 listWork[i].style.display = 'block';
@@ -325,6 +336,11 @@ TodoController.prototype = {
         var todoActive = document.getElementById('activedItems');
         todoActive.addEventListener('click', function () {
             localStorage.setItem('todoButtonCheck', "Active");
+
+
+            $('#activedItems').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+            $('#allWorks').css('border-color','');
+            $('#completedTodos').css("border-color", "");
 
             var list = todoController.getTodoFromLocalstorage('todoList');
 
@@ -347,6 +363,10 @@ TodoController.prototype = {
         todoCompleted.addEventListener('click', function () {
             console.log("완료된 목록 출력하기 ");
             localStorage.setItem('todoButtonCheck', "Completed");
+
+            $('#completedTodos').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+            $('#activedItems').css('border-color','');
+            $('#allWorks').css("border-color", "");
 
             //isDone 목록 true인것만 출력하면 됨
             var todoList = todoController.getTodoFromLocalstorage('todoList');
@@ -404,6 +424,19 @@ TodoController.prototype = {
      */
     renderTodo: function () {
         console.log("화면 시작");
+
+        let buttonChecked = localStorage.getItem('todoButtonCheck');
+        if(buttonChecked == "All"){
+            $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+        }else if(buttonChecked == "Active"){
+            $('#activedItems').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+        }else if(buttonChecked == "Completed"){
+            $('#completedTodos').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+        }else{
+            $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+        }
+
+
 //localStorage에서 가져 오기
         var list = todoController.getTodoFromLocalstorage('todoList');
         //여서 local 값 확인후 출력해주믄 됨.
@@ -529,3 +562,5 @@ todoController.events();
 todoController.renderTodo();
 //모든 항목 활성 계산 수행
 todoController.countItem();
+
+var buttonNumber = [false, false, false];
