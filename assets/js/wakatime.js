@@ -343,8 +343,9 @@ function deleteChart() {
 
 
 }
-
+//
 function dateCheck() {
+
     let check = localStorage.getItem("dateCheck");
 
     if (check === null) {
@@ -366,7 +367,6 @@ function dateCheck() {
         console.log("띠용");
     }
     console.log("??")
-
 
 
 }
