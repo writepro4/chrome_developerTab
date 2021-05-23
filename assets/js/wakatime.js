@@ -312,7 +312,7 @@ document.getElementById("github").addEventListener("click", githubOpen);
 document.getElementById("date").addEventListener("click", dateCheck);
 
 function githubOpen() {
-    location.href = 'https://github.com/writepro4/chrome_developer_tab';
+    location.href = 'https://github.com/writepro4/chrome_developerTab';
 }
 
 
