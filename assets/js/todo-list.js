@@ -97,26 +97,41 @@ TodoController.prototype = {
         this.setAttributes(inpCheckbox, {type: 'checkbox', class: 'itemList', id: todoId,});
 
 
+        //체크했을때 이 이벤트 실행됨
         inpCheckbox.addEventListener('click', function (e) {
+
+
 
             //localStorage에서 목록 배열 가져 오기
             var list = todoController.getTodoFromLocalstorage('todoList');
 
             var id = e.target.getAttribute('id');
+
+
+
             for (var i = 0; i < list.length; i++) {
                 if (list[i].id == id) {
-                    list[i].isDone = e.target.checked;
 
-                    //요건 그냥 isDone속성을 true로 바꿔줌.
-                    //css after와 큰 상관 없는듯듯
-                    console.log("체크 했을때 ")
-                    console.log((list[i].isDone))
-                    console.log(e.target.checked)
+
+                    list[i].isDone = e.target.checked;
+                    //
+                    // console.log("체크 했을때 ")
+                    // console.log((list[i].isDone))
+                    // console.log(e.target.checked)
                 }
             }
+
+
             //localStorage에 할 목록 저장
+            //index local 저장을 위한 작업
             todoController.setTodoLocalstorage(list);
+            console.log("실행하지??");
             todoController.countItem();
+
+            todoController.clearCompleted(list);
+            // todoController.setTodoLocalstorage(list);
+            // console.log("렌더링 시작합니다");
+            todoController.renderTodo();
         });
         return inpCheckbox;
     },
@@ -248,6 +263,8 @@ TodoController.prototype = {
      * @param {number} id - id button remove item todo
      * @param {array} list - list array get from localStorage
      */
+
+    //삭제하기 버튼
     removeTodo: function (id, list) {
         list = todoController.getTodoFromLocalstorage('todoList');
         for (var i = 0; i < list.length; i++) {
@@ -320,10 +337,9 @@ TodoController.prototype = {
             //if문으로 처리해야됨.
 
 
-                $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
-                $('#activedItems').css('border-color','');
-                $('#completedTodos').css("border-color", "");
-
+            $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
+            $('#activedItems').css('border-color', '');
+            $('#completedTodos').css("border-color", "");
 
 
             localStorage.setItem('todoButtonCheck', "All");
@@ -336,10 +352,11 @@ TodoController.prototype = {
         var todoActive = document.getElementById('activedItems');
         todoActive.addEventListener('click', function () {
             localStorage.setItem('todoButtonCheck', "Active");
+            console.log()
 
 
             $('#activedItems').css({"border-color": "rgba(175, 47, 47, 0.2)"});
-            $('#allWorks').css('border-color','');
+            $('#allWorks').css('border-color', '');
             $('#completedTodos').css("border-color", "");
 
             var list = todoController.getTodoFromLocalstorage('todoList');
@@ -365,7 +382,7 @@ TodoController.prototype = {
             localStorage.setItem('todoButtonCheck', "Completed");
 
             $('#completedTodos').css({"border-color": "rgba(175, 47, 47, 0.2)"});
-            $('#activedItems').css('border-color','');
+            $('#activedItems').css('border-color', '');
             $('#allWorks').css("border-color", "");
 
             //isDone 목록 true인것만 출력하면 됨
@@ -426,13 +443,13 @@ TodoController.prototype = {
         console.log("화면 시작");
 
         let buttonChecked = localStorage.getItem('todoButtonCheck');
-        if(buttonChecked == "All"){
+        if (buttonChecked == "All") {
             $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
-        }else if(buttonChecked == "Active"){
+        } else if (buttonChecked == "Active") {
             $('#activedItems').css({"border-color": "rgba(175, 47, 47, 0.2)"});
-        }else if(buttonChecked == "Completed"){
+        } else if (buttonChecked == "Completed") {
             $('#completedTodos').css({"border-color": "rgba(175, 47, 47, 0.2)"});
-        }else{
+        } else {
             $('#allWorks').css({"border-color": "rgba(175, 47, 47, 0.2)"});
         }
 

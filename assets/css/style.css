@@ -288,6 +288,7 @@ label[for='toggle-all'] {
 
 .todo-list li .remove:after {
     content: '×';
+    /*content: '2004';*/
 }
 
 .todo-list li:hover .remove {
