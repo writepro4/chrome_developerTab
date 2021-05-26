@@ -213,9 +213,12 @@ $(document).ready(function () {
                 //     type: 'info',
                 //     duration: 2500
                 // });
-                $('#rain').remove();
+                // $('#rain').remove();
+                $("#rain").css("display", "none");
 
                 percentAmount = 100;
+            } else {
+                // $("#rain").css("display", "block");
             }
 
             //progress 바 작동 코드
@@ -310,7 +313,7 @@ function githubOpen() {
     location.href = 'https://github.com/writepro4/chrome_developerTab';
 }
 
-var chartSet =  localStorage.getItem("chartButton");
+var chartSet = localStorage.getItem("chartButton");
 
 function deleteChart() {
     console.log("차트 삭제 ")
@@ -335,7 +338,6 @@ function deleteChart() {
     } else {
         console.log("띠용");
     }
-
 
 
 }

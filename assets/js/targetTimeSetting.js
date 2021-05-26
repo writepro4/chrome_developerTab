@@ -125,8 +125,9 @@ function targetTimeSetting(value) {
                 console.log("값 변환")
                 percentAmount = 100;
                 // $('#rain').remove();
+                $("#rain").css("display", "none");
             }else{
-
+                $("#rain").css("display", "block");
                 // if(document.getElementById("rain")){
                 //     console.log("존재");
                 // }else{
