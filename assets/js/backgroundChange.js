@@ -25,6 +25,21 @@ if (localStorage.getItem('backgroundImage') != null) {
     else if (backgroundImageNumber == 6) {
         document.body.style.backgroundImage = 'url("/assets/images/sakura4.jpg")';
     }
+    else if (backgroundImageNumber == 7) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (1).jpg")';
+    }
+    else if (backgroundImageNumber == 8) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (2).jpg")';
+    }
+    else if (backgroundImageNumber == 9) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (3).jpg")';
+    }
+    else if (backgroundImageNumber == 10) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (4).jpg")';
+    }
+    else if (backgroundImageNumber == 11) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (5).jpg")';
+    }
 
 
 }else{
@@ -37,7 +52,7 @@ if (localStorage.getItem('backgroundImage') != null) {
 
 function backgroundSetting() {
     backgroundImageNumber += 1;
-    if (backgroundImageNumber >= 7) {
+    if (backgroundImageNumber >= 12) {
         console.log("넘버 초기화 ")
         backgroundImageNumber = 0;
     }
@@ -60,6 +75,21 @@ function backgroundSetting() {
     }
     else if (backgroundImageNumber == 6) {
         document.body.style.backgroundImage = 'url("/assets/images/sakura4.jpg")';
+    }
+    else if (backgroundImageNumber == 7) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (1).jpg")';
+    }
+    else if (backgroundImageNumber == 8) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (2).jpg")';
+    }
+    else if (backgroundImageNumber == 9) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (3).jpg")';
+    }
+    else if (backgroundImageNumber == 10) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (4).jpg")';
+    }
+    else if (backgroundImageNumber == 11) {
+        document.body.style.backgroundImage = 'url("/assets/images/only (5).jpg")';
     }
 }
 
