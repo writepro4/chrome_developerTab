@@ -238,13 +238,19 @@ $(document).ready(function () {
                 alert('Server understood the request, but request content was invalid. [400]');
             } else if (jqXHR.status === 401) {
                 var check = localStorage.getItem('chartButton');
-                console.log("차트버튼"+check);
-                if(check === "false"){
-                    $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {type: 'danger', duration: 1500});
-                }else if(check === "true"){
+                console.log("차트버튼" + check);
+                if (check === "false") {
+                    $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {
+                        type: 'danger',
+                        duration: 1500
+                    });
+                } else if (check === "true") {
 
-                }else{
-                    $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {type: 'danger', duration: 1500});
+                } else {
+                    $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {
+                        type: 'danger',
+                        duration: 1500
+                    });
                 }
 
                 $('#myChart').remove();
@@ -275,43 +281,15 @@ $(document).ready(function () {
     let check = localStorage.getItem("chartButton");
     console.log('값 확인 :' + check);
     if (check === null) {
-        console.log("널 값 ")
+        $("#toggleChart").css("display", "block");
 
     } else if (check === 'true') {
         console.log("실행")
-        $('#toggleChartIn').remove();
+        $("#toggleChart").css("display", "none");
     } else if (check === 'false') {
-        console.log("펄스 값")
+        $("#toggleChart").css("display", "block");
 
     }
-
-    let check2 = localStorage.getItem("goalSettingButton");
-    console.log('값 확인 :' + check2);
-    if (check2 === null) {
-        console.log("널 값 ")
-    } else if (check2 === 'true') {
-        console.log("실행")
-        $('#goalSetting').remove();
-    } else if (check2 === 'false') {
-        console.log("펄스 값")
-
-    }
-
-    let datepickerCheck = localStorage.getItem('dateCheck');
-    console.log('값 확인 :' + datepickerCheck);
-    if (datepickerCheck === null) {
-        console.log("널 값 ")
-    } else if (datepickerCheck === 'true') {
-        console.log("실행")
-        $('#dateDiv').remove();
-    } else if (datepickerCheck === 'false') {
-        console.log("펄스 값")
-
-    }
-
-
-
-
 
 
 });
@@ -324,6 +302,7 @@ function githubOpen() {
     location.href = 'https://github.com/writepro4/chrome_developerTab';
 }
 
+var chartSet =  localStorage.getItem("chartButton");
 
 function deleteChart() {
     console.log("차트 삭제 ")
@@ -334,48 +313,40 @@ function deleteChart() {
         console.log("널");
         //사용자가 버튼을 처음 눌렀을때
         localStorage.setItem("chartButton", true);
-        $('#toggleChartIn').remove();
+        $("#toggleChart").css("display", "none");
     } else if (check === 'true') {
         console.log("트루");
         localStorage.setItem("chartButton", false);
         //사용자가 다시 차트를 열려 할때
-        location.reload();
+        $("#toggleChart").css("display", "block");
     } else if (check === 'false') {
         console.log("펄스");
         //사용자가 다시 차트를 닫을때
         localStorage.setItem("chartButton", true);
-        $('#toggleChartIn').remove();
+        $("#toggleChart").css("display", "none");
     } else {
         console.log("띠용");
     }
-    console.log("??")
+
 
 
 }
-//
+
+var checkSet = true;
+
+//datecheck input 창 display 속성 block 으로 처리
 function dateCheck() {
 
-    let check = localStorage.getItem("dateCheck");
 
-    if (check === null) {
-        console.log("널");
-        //사용자가 버튼을 처음 눌렀을때
-        localStorage.setItem("dateCheck", true);
-        $('#dateDiv').remove();
-    } else if (check === 'true') {
-        console.log("트루");
-        localStorage.setItem("dateCheck", false);
-        //사용자가 다시 차트를 열려 할때
-        location.reload();
-    } else if (check === 'false') {
-        console.log("펄스");
-        //사용자가 다시 차트를 닫을때
-        localStorage.setItem("dateCheck", true);
-        $('#dateDiv').remove();
-    } else {
-        console.log("띠용");
+    if (checkSet == true) {
+        $("#dateDiv").css("display", "block");
+        console.log("트루")
+        checkSet = false;
+    } else if (checkSet == false) {
+        console.log("펄스")
+        $("#dateDiv").css("display", "none");
+        checkSet = true;
     }
-    console.log("??")
 
 
 }

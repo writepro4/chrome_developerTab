@@ -38,10 +38,11 @@
 <section style="width: 100%; margin: 5px auto;">
 
     <!--개발자의 변명 section-->
-    <div class="ui pointing below label" style="margin-bottom: -5px;">
+    <div data-inverted="" data-tooltip="Rain stops when you reach the WakaTime target time! "
+         data-position="bottom center"class="ui pointing below label" style="margin-bottom: -5px;">
         Tab for developers 👻
     </div>
-    <button data-inverted="" data-tooltip="do not use wakatime! "
+    <button data-inverted="" data-tooltip="Do not use wakatime! "
             data-position="bottom center" class="circular ui icon button" id="toggleButton"
             style="float: right; color: black">
         <i class="icon chart line"></i>
@@ -80,7 +81,7 @@
     <!-- ////개발자의 변명 section-->
 
 
-    <div id="toggleChart">
+    <div id="toggleChart" style="display: none">
         <div id="toggleChartIn">
             <!--    Chart.js section-->
             <canvas id="myChart" height="78"></canvas>
@@ -113,7 +114,7 @@
 
 
             <!--목표 시간 선택 버튼 section-->
-            <div class="eight wide ui buttons " id="goalSetting" style="margin-top: 10px">
+            <div class="eight wide ui buttons " id="goalSetting" style="margin-top: 10px; display: none">
                 <button id="60" class="ui secondary button" data-inverted="" data-tooltip="Starting very small!"
                         data-position="top center">👻 1hour
                 </button>
@@ -159,7 +160,7 @@
 <!--    <h1 class="ml2">Sunny mornings</h1>-->
 
 
-    <p style="text-align: center; " id="dateDiv"><input type="text" id="datepicker" placeholder="Click me"></p>
+    <p style="text-align: center; display: none" id="dateDiv"><input type="text" id="datepicker" placeholder="Click me"></p>
 
 
 </section>
