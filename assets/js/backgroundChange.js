@@ -23,7 +23,7 @@ if (localStorage.getItem('backgroundImage') != null) {
         document.body.style.backgroundImage = 'url("/assets/images/lake2.jpg")';
     }
     else if (backgroundImageNumber == 6) {
-        document.body.style.backgroundImage = 'url("/assets/images/aurora.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/sakura4.jpg")';
     }
 
 
@@ -59,7 +59,7 @@ function backgroundSetting() {
         document.body.style.backgroundImage = 'url("/assets/images/lake2.jpg")';
     }
     else if (backgroundImageNumber == 6) {
-        document.body.style.backgroundImage = 'url("/assets/images/aurora.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/sakura4.jpg")';
     }
 }
 
