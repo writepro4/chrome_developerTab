@@ -242,14 +242,22 @@ $(document).ready(function () {
                 if (check === "false") {
                     $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {
                         type: 'danger',
-                        duration: 1500
+                        duration: 2500
+                    });
+                    $.toast('<h4>If you are not using Waka Time, click the top right button.</h4>', {
+                        type: 'info',
+                        duration: 4500
                     });
                 } else if (check === "true") {
 
                 } else {
                     $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {
                         type: 'danger',
-                        duration: 1500
+                        duration: 2500
+                    });
+                    $.toast('<h4>If you are not using Waka Time, click the top right button.</h4>', {
+                        type: 'info',
+                        duration: 4500
                     });
                 }
 
