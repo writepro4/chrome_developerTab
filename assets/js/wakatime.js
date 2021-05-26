@@ -233,11 +233,20 @@ $(document).ready(function () {
 
             if (jqXHR.status === 0) {
                 // alert('Not connect.\n Verify Network.');
-                $.toast('<h4>인터넷 연결을 확인해주세요!</h4>', {type: 'danger', duration: 1500});
+                $.toast('<h4>Please check your internet connection!</h4>', {type: 'danger', duration: 1500});
             } else if (jqXHR.status === 400) {
                 alert('Server understood the request, but request content was invalid. [400]');
             } else if (jqXHR.status === 401) {
-                $.toast('<h4>If you want the goal setting function, please log in to WakaTime!</h4>', {type: 'danger', duration: 1500});
+                var check = localStorage.getItem('chartButton');
+                console.log("차트버튼"+check);
+                if(check === "false"){
+                    $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {type: 'danger', duration: 1500});
+                }else if(check === "true"){
+
+                }else{
+                    $.toast('<h4>If you want the goal setting function, please Login to WakaTime!</h4>', {type: 'danger', duration: 1500});
+                }
+
                 $('#myChart').remove();
 
 
