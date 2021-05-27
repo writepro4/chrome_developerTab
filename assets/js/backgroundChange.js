@@ -79,6 +79,7 @@ if (localStorage.getItem('backgroundImage') != null) {
 
 }else{
     backgroundImageNumber = 0;
+    localStorage.setItem('backgroundImage',0);
 }
 // console.log("너의 숫자는"+backgroundImageNumber);
 
