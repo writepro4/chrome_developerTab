@@ -75,6 +75,9 @@ if (localStorage.getItem('backgroundImage') != null) {
     else if (backgroundImageNumber == 11) {
         document.body.style.backgroundImage = 'url("/assets/images/only (5).jpg")';
     }
+    else if (backgroundImageNumber == 12) {
+        document.body.style.backgroundImage = 'url("/assets/images/ship.jpg")';
+    }
 
 
 }else{
@@ -88,7 +91,7 @@ if (localStorage.getItem('backgroundImage') != null) {
 
 function backgroundSetting() {
     backgroundImageNumber += 1;
-    if (backgroundImageNumber >= 12) {
+    if (backgroundImageNumber >= 13) {
         console.log("넘버 초기화 ")
         backgroundImageNumber = 0;
     }
@@ -126,6 +129,9 @@ function backgroundSetting() {
     }
     else if (backgroundImageNumber == 11) {
         document.body.style.backgroundImage = 'url("/assets/images/only (5).jpg")';
+    }
+    else if (backgroundImageNumber == 12) {
+        document.body.style.backgroundImage = 'url("/assets/images/ship.jpg")';
     }
 }
 

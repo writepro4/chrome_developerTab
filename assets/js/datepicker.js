@@ -7,7 +7,7 @@ $("#datepicker").datepicker({
 
         //사용자가 다시 차트를 닫을때
         localStorage.setItem("dateCheck", true);
-        $('#dateDiv').remove();
+        $("#dateDiv").css("display", "none");
 
 
         //TODO 리로드가 아니라 그냥 생성해야됨 css 에러 남 .

@@ -302,12 +302,82 @@ $(document).ready(function () {
 
     }
 
+    let checkProgress = localStorage.getItem("progressButton");
+    console.log('값 확인 :' + check);
+    if (checkProgress === null) {
+        $("#progressBar").css("display", "block");
+
+    } else if (checkProgress === 'true') {
+        console.log("실행")
+        $("#progressBar").css("display", "none");
+    } else if (checkProgress === 'false') {
+        $("#progressBar").css("display", "block");
+
+    }
+
 
 });
 
 document.getElementById("toggleButton").addEventListener("click", deleteChart);
 document.getElementById("github").addEventListener("click", githubOpen);
+document.getElementById("wakahome").addEventListener("click", wakaOpen);
 document.getElementById("date").addEventListener("click", dateCheck);
+document.getElementById("storeLink").addEventListener("click", storeLinkGo);
+document.getElementById("optionCehck").addEventListener("click", chooseAnOption);
+document.getElementById("progressCheck").addEventListener("click", progressShowing);
+
+function progressShowing() {
+
+    console.log("프로 삭제 ")
+    let check = localStorage.getItem("progressButton");
+    console.log("프로 값 확인 : " + check);
+
+    if (check === null) {
+        console.log("널");
+        //사용자가 버튼을 처음 눌렀을때
+        localStorage.setItem("progressButton", true);
+        $("#progressBar").css("display", "none");
+    } else if (check === 'true') {
+        console.log("트루");
+        localStorage.setItem("progressButton", false);
+        //사용자가 다시 차트를 열려 할때
+        $("#progressBar").css("display", "block");
+    } else if (check === 'false') {
+        console.log("펄스");
+        //사용자가 다시 차트를 닫을때
+        localStorage.setItem("progressButton", true);
+        $("#progressBar").css("display", "none");
+    } else {
+        console.log("띠용");
+    }
+
+
+}
+
+
+ var optionCheck = true;
+function chooseAnOption() {
+
+    if (optionCheck == true) {
+        $("#optionButton").css("display", "block");
+        optionCheck = false;
+    } else if (optionCheck == false) {
+        $("#optionButton").css("display", "none");
+        optionCheck = true;
+    }
+    // $("#optionButton").css("display", "block");
+}
+
+function wakaOpen() {
+    location.href = 'https://wakatime.com/dashboard';
+}
+
+function storeLinkGo() {
+
+    // https://chrome.google.com/webstore/detail/wakatimetab/jpkliledckcfkiiiphajjjeofagpoooj
+    location.href = 'https://chrome.google.com/webstore/detail/wakatimetab/jpkliledckcfkiiiphajjjeofagpoooj';
+
+}
 
 function githubOpen() {
     location.href = 'https://github.com/writepro4/chrome_developerTab';
@@ -342,7 +412,13 @@ function deleteChart() {
 
 }
 
+
 var checkSet = true;
+// console.log(checkSetClass.check);
+
+// let sd = new checkSetClass();
+// console.log(sd.check);
+
 
 //datecheck input 창 display 속성 block 으로 처리
 function dateCheck() {
@@ -350,15 +426,15 @@ function dateCheck() {
 
     if (checkSet == true) {
         $("#dateDiv").css("display", "block");
-        console.log("트루")
         checkSet = false;
     } else if (checkSet == false) {
-        console.log("펄스")
         $("#dateDiv").css("display", "none");
         checkSet = true;
     }
 
 
 }
-
+// class checkSetClass {
+//     check = true;
+// }
 

@@ -34,49 +34,70 @@
 <!--    <div class="back-row-toggle toggle active">BACK<br>ROW</div>-->
 <!--    <div class="single-toggle toggle">SINGLE</div>-->
 <!--</div>-->
-
+<br>
 <section style="width: 100%; margin: 0px auto;">
 
     <!--개발자의 변명 section-->
+
+
+
+    <button data-inverted="" data-tooltip="Setting the option"
+            data-position="bottom center" class="circular ui icon button" id="optionCehck" style="float: right; color: black">
+        <i class="icon options"></i>
+    </button>
+
+    <span style="display: none" id="optionButton">
+        <button data-inverted="" data-tooltip="Do not use wakatime! "
+                data-position="bottom center" class="circular ui icon button" id="toggleButton"
+                style="float: right; color: black">
+            <i class="icon chart line"></i>
+        </button>
+        <button data-inverted="" data-tooltip="SourceView! "
+                data-position="bottom center" class="circular ui icon button" id="github"
+                style="float: right; color: black">
+            <i class="icon github"></i>
+        </button>
+        <button data-inverted="" data-tooltip="Change Wallpaper! "
+                data-position="bottom center" class="circular ui icon button" id="backgroundSetting"
+                style="float: right; color: black">
+            <i class="icon picture"></i>
+        </button>
+        <button data-inverted="" data-tooltip="Hide goal setting button! "
+                data-position="bottom center" class="circular ui icon button" id="goalSettingButton"
+                style="float: right; color: black">
+            <i class="icon target"></i>
+        </button>
+        <button data-inverted="" data-tooltip="D-day count setting! "
+                data-position="bottom center" class="circular ui icon button" id="date" style="float: right; color: black">
+            <i class="icon hourglass start"></i>
+        </button>
+        <button data-inverted="" data-tooltip="Make the background image change randomly! "
+                data-position="bottom center" class="circular ui icon button" id="randomBackground" style="float: right; color: black">
+            <i class="icon random"></i>
+        </button>
+        <button data-inverted="" data-tooltip="Please rate it at the store 😊! "
+                data-position="bottom center" class="circular ui icon button" id="storeLink" style="float: right; color: black">
+            <i class="icon play"></i>
+        </button>
+        <button data-inverted="" data-tooltip="Go to Wakatime homepage"
+                data-position="bottom center" class="circular ui icon button" id="wakahome" style="float: right; color: black">
+            <i class="icon time"></i>
+        </button>
+        <button data-inverted="" data-tooltip="I can't see the progress bar"
+                data-position="bottom center" class="circular ui icon button" id="progressCheck" style="float: right; color: black">
+            <i class="icon thumbtack"></i>
+        </button>
+    </span>
+
     <div data-inverted="" data-tooltip="Rain stops when you reach the WakaTime target time! "
          data-position="bottom center"class="ui pointing below label" style="margin-bottom: -5px;">
         Tab for Creators 👻
     </div>
-    <button data-inverted="" data-tooltip="Do not use wakatime! "
-            data-position="bottom center" class="circular ui icon button" id="toggleButton"
-            style="float: right; color: black">
-        <i class="icon chart line"></i>
-    </button>
-    <button data-inverted="" data-tooltip="SourceView! "
-            data-position="bottom center" class="circular ui icon button" id="github"
-            style="float: right; color: black">
-        <i class="icon github"></i>
-    </button>
-    <button data-inverted="" data-tooltip="Change Wallpaper! "
-            data-position="bottom center" class="circular ui icon button" id="backgroundSetting"
-            style="float: right; color: black">
-        <i class="icon picture"></i>
-    </button>
-    <button data-inverted="" data-tooltip="Hide goal setting button! "
-            data-position="bottom center" class="circular ui icon button" id="goalSettingButton"
-            style="float: right; color: black">
-        <i class="icon target"></i>
-    </button>
-    <button data-inverted="" data-tooltip="D-day count setting! "
-            data-position="bottom center" class="circular ui icon button" id="date" style="float: right; color: black">
-        <i class="icon hourglass start"></i>
-    </button>
-    <button data-inverted="" data-tooltip="Make the background image change randomly! "
-            data-position="bottom center" class="circular ui icon button" id="randomBackground" style="float: right; color: black">
-        <i class="icon random"></i>
-    </button>
-    <!--    <p>Date: <input type="text" id="datepicker"></p>-->
 
-    <!--    <div class="ui floating message" style="margin-top: 20px">-->
 
-    <!--        <span class="microscopic-font" id="developerExcuse"></span>-->
 
-    <!--    </div>-->
+
+
 
     <!-- ////개발자의 변명 section-->
 
@@ -89,9 +110,9 @@
 
             <!--WakaTime 프로그레스바 section-->
 
-            <div class="ui container">
+            <div class="ui container" id="progressBar" style="display: none">
 
-                <div class="label targetTime microscopic-font ml2"
+                <div class="label targetTime microscopic-font"
                      style="color: wheat; margin: 10px; font-size: 20px; text-align: center;">
                     What is today's coding time?
                 </div>
