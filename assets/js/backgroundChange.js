@@ -76,7 +76,16 @@ if (localStorage.getItem('backgroundImage') != null) {
         document.body.style.backgroundImage = 'url("/assets/images/only (5).jpg")';
     }
     else if (backgroundImageNumber == 12) {
-        document.body.style.backgroundImage = 'url("/assets/images/ship.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/paris.jpg")';
+    }
+    else if (backgroundImageNumber == 13) {
+        document.body.style.backgroundImage = 'url("/assets/images/sun.jpg")';
+    }
+    else if (backgroundImageNumber == 14) {
+        document.body.style.backgroundImage = 'url("/assets/images/mount1.jpg")';
+    }
+    else if (backgroundImageNumber == 15) {
+        document.body.style.backgroundImage = 'url("/assets/images/flow.jpg")';
     }
 
 
@@ -91,7 +100,7 @@ if (localStorage.getItem('backgroundImage') != null) {
 
 function backgroundSetting() {
     backgroundImageNumber += 1;
-    if (backgroundImageNumber >= 13) {
+    if (backgroundImageNumber >= 16) {
         console.log("넘버 초기화 ")
         backgroundImageNumber = 0;
     }
@@ -131,7 +140,16 @@ function backgroundSetting() {
         document.body.style.backgroundImage = 'url("/assets/images/only (5).jpg")';
     }
     else if (backgroundImageNumber == 12) {
-        document.body.style.backgroundImage = 'url("/assets/images/ship.jpg")';
+        document.body.style.backgroundImage = 'url("/assets/images/paris.jpg")';
+    }
+    else if (backgroundImageNumber == 13) {
+        document.body.style.backgroundImage = 'url("/assets/images/sun.jpg")';
+    }
+    else if (backgroundImageNumber == 14) {
+        document.body.style.backgroundImage = 'url("/assets/images/mount1.jpg")';
+    }
+    else if (backgroundImageNumber == 15) {
+        document.body.style.backgroundImage = 'url("/assets/images/flow.jpg")';
     }
 }
 

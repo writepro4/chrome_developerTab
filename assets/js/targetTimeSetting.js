@@ -14,6 +14,26 @@ function targetTimeSetting(value) {
     //목표 시간 가져와서 로컬에 저장
     const targetTime = parseInt(value.target.id);
 
+    let timeSet = 0;
+
+    if(targetTime == 60){
+        timeSet = 1;
+    }else if(targetTime == 120){
+        timeSet = 2;
+    }else if(targetTime == 180){
+        timeSet = 3;
+    }else if(targetTime == 240){
+        timeSet = 4;
+    }else if(targetTime == 300){
+        timeSet = 5;
+    }else if(targetTime == 360){
+        timeSet = 6;
+    }else if(targetTime == 420){
+        timeSet = 7;
+    }else if(targetTime == 480){
+        timeSet = 8;
+    }
+
 
     localStorage.setItem("targetTime", targetTime)
 
@@ -126,21 +146,11 @@ function targetTimeSetting(value) {
                 percentAmount = 100;
                 // $('#rain').remove();
                 $("#rain").css("display", "none");
+                
             }else{
                 $("#rain").css("display", "block");
-                // if(document.getElementById("rain")){
-                //     console.log("존재");
-                // }else{
-                //     console.log("존재 안함")
-                //
-                //     let html =+ `<div id="rain">
-                //         <div class="rain front-row"></div>
-                //         <div class="rain back-row"></div>
-                //         </div>`;
-                //
-                //     $('#bodySetion').after(html);
-                //
-                // }
+                $.toast(`set to <h4>${timeSet}</h4> hours`, {type: 'info', duration: 1500});
+       
 
             }
             console.log("progress" + percentAmount);

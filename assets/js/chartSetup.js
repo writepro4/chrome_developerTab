@@ -55,7 +55,7 @@ $(document).ready(function () {
 
         // 데이터 세트의 데이터
         data: {
-            labels: ['7일 전', '6일 전', '5일 전', '4일 전', '3일 전', '2일 전', '1일 전'],
+            labels: ['7days', '6days', '5days', '4days', '3days', '2days', '1days'],
             datasets: [{
                 label: 'WakaTime 일주일간 기록',
                 backgroundColor: 'rgb(255, 99, 132)',

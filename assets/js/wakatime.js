@@ -75,6 +75,16 @@ $(document).ready(function () {
                 const _1DaysAgo = data.data[6].grand_total.hours + "." + distributionHeat[6]
                 const today = data.data[7].grand_total.hours + "." + distributionHeat[7]
 
+                const _7DaysA = data.data[0].grand_total.hours*60 +  distributionHeat[0]
+                const _5DaysA = data.data[2].grand_total.hours*60 +  distributionHeat[2]
+                const _6DaysA = data.data[1].grand_total.hours*60 +  distributionHeat[1]
+                const _4DaysA = data.data[3].grand_total.hours*60 +  distributionHeat[3]
+                const _3DaysA = data.data[4].grand_total.hours*60 +  distributionHeat[4]
+                const _2DaysA = data.data[5].grand_total.hours*60 +  distributionHeat[5]
+                const _1DaysA = data.data[6].grand_total.hours*60 +  distributionHeat[6]
+                const toda = data.data[7].grand_total.hours*60 +  distributionHeat[7]
+
+
 
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var chart = new Chart(ctx, {
@@ -83,7 +93,7 @@ $(document).ready(function () {
 
                     // 데이터 세트의 데이터
                     data: {
-                        labels: ['7일 전', '6일 전', '5일 전', '4일 전', '3일 전', '2일 전', '1일 전', '오늘'],
+                        labels: ['7days', '6days', '5days', '4days', '3days', '2days', '1days', 'today'],
                         datasets: [{
                             label: 'WakaTime',
                             backgroundColor: [
@@ -116,7 +126,11 @@ $(document).ready(function () {
                     // 구성 옵션은 여기로 이동
                     options: {
 
+
                         scales: {
+                            x:{
+                                type: 'timeseries',
+                            },
                             yAxes: [{
                                 ticks: {
                                     beginAtZero: true
