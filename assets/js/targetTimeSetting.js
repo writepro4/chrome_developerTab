@@ -161,7 +161,7 @@ function targetTimeSetting(value) {
 
             const targetTimeConversion = targetTime / 60;
 
-            $('.targetTime').text("Okay~ " + targetTimeConversion + "Time!");
+            $('.targetTime').text("Okay~ " + targetTimeConversion + " Hours!");
 
 
         }
